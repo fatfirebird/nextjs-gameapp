@@ -7,8 +7,9 @@
         "plugin:react/recommended",
         "standard",
         "prettier",
-        "plugin:prettier/recommended"
-
+        "plugin:prettier/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -19,7 +20,8 @@
     },
     "plugins": [
         "react",
-        "prettier"
+        "prettier",
+        "import"
     ],
     "rules": {
         "prettier/prettier": [
