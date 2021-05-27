@@ -5,6 +5,7 @@ import { typography, space, color } from 'styled-system'
 export const SLink = styled(Link)`
   :hover,
   :focus {
+    cursor: pointer;
     text-decoration: none;
     transition: 0.3s;
     opacity: 0.8;

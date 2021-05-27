@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import React from 'react'
-import { Col, Container, Row } from 'styled-bootstrap-grid'
+import { Container, Row } from 'styled-bootstrap-grid'
 import { Games } from '../src/api/games'
-import { Box } from '../src/components/UI/Box'
 
-export default function Home({ data }) {
+import { CardList } from '../src/containers/CardList'
+
+export default function Home({ data: { results, next }, initialOrdering }) {
   return (
     <>
       <Head>
@@ -14,19 +15,17 @@ export default function Home({ data }) {
       </Head>
       <Container>
         <Row>
-          <Col xs={12} md={6} lg={3}>
-            <Box>Карточка</Box>
-          </Col>
+          <CardList initialData={results} next={next} initialOrdering={initialOrdering} />
         </Row>
       </Container>
     </>
   )
 }
 
-export async function getStaticProps(context) {
-  const { data } = await Games.getGamesList({})
+export async function getServerSideProps({ query: { ordering = '', page = 1 } }) {
+  const { data } = await Games.getGamesList({ ordering, page })
 
   return {
-    props: { data },
+    props: { data, initialOrdering: ordering },
   }
 }

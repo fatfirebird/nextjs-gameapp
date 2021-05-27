@@ -10,7 +10,6 @@ export class Games {
    * По дате релиза: released/-released
    */
   static getGamesList({ ordering, page = 1 }) {
-    console.log(Request.url)
     return Request.get('/games', {
       params: {
         ordering,
