@@ -8,12 +8,14 @@ export class Games {
    * Виды сортировки:
    * По рейтингу: rating/-rating
    * По дате релиза: released/-released
+   *
+   * По платформам
    */
-  static getGamesList({ ordering, page = 1 }) {
+  static getGamesList({ ordering, page = 1, platforms = '1' }) {
     return Request.get('/games', {
       params: {
-        ordering,
         page,
+        ...{ ordering, platforms },
       },
     })
   }

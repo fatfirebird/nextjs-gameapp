@@ -5,7 +5,7 @@ import { Games } from '../src/api/games'
 
 import { CardList } from '../src/containers/CardList'
 
-export default function Home({ data: { results, next }, initialOrdering }) {
+export default function Home({ data: { results, next }, initialFilters }) {
   return (
     <>
       <Head>
@@ -15,17 +15,17 @@ export default function Home({ data: { results, next }, initialOrdering }) {
       </Head>
       <Container>
         <Row>
-          <CardList initialData={results} next={next} initialOrdering={initialOrdering} />
+          <CardList initialData={results} next={next} initialFilters={initialFilters} />
         </Row>
       </Container>
     </>
   )
 }
 
-export async function getServerSideProps({ query: { ordering = '', page = 1 } }) {
-  const { data } = await Games.getGamesList({ ordering, page })
+export async function getServerSideProps({ query: { ordering = '', page = 1, platforms = '1' } }) {
+  const { data } = await Games.getGamesList({ ordering, page, platforms })
 
   return {
-    props: { data, initialOrdering: ordering },
+    props: { data, initialFilters: { ordering, platforms, page } },
   }
 }
