@@ -8,6 +8,7 @@ import { Card } from '../../components/Card'
 import { Box } from '../../components/UI/Box'
 import { Button } from '../../components/UI/Button/Button'
 import getQueryParams from '../../utils/getQueryParams'
+import r from '../../utils/toRem'
 
 const options = [
   {
@@ -81,7 +82,7 @@ export const CardList = ({ initialData, next, initialOrdering }) => {
   return (
     <>
       <Col col={12}>
-        <Box>
+        <Box mb={r(24)}>
           <Dropdown
             onChange={({ value }) => {
               setOrdering(value)
@@ -100,13 +101,15 @@ export const CardList = ({ initialData, next, initialOrdering }) => {
         </Col>
       ))}
 
-      {nextLink ? (
-        <Box mx="auto">
-          <Button onClick={handleLoadMore}>Загрузить еще</Button>
-        </Box>
-      ) : (
-        <></>
-      )}
+      <Col xs={12}>
+        {nextLink ? (
+          <Box display="flex" justifyContent="center">
+            <Button onClick={handleLoadMore}>Загрузить еще</Button>
+          </Box>
+        ) : (
+          <></>
+        )}
+      </Col>
     </>
   )
 }

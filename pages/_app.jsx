@@ -6,6 +6,7 @@ import { theme, gridTheme } from '../src/styles/theme'
 
 import 'react-dropdown/style.css'
 import 'swiper/swiper.min.css'
+import 'normalize.css'
 
 import '../src/styles/globals.css'
 

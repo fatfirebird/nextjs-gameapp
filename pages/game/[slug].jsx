@@ -20,6 +20,9 @@ export default function Home({ name, genres, released = 'no info', website, desc
       </Head>
       <Container>
         <Row>
+          <Col>
+            <SLink href="/">На главную</SLink>
+          </Col>
           <Col xs={12} lg={6}>
             <Box>
               <Typography as="h1" color="black" mb={r(12)}>
@@ -40,7 +43,6 @@ export default function Home({ name, genres, released = 'no info', website, desc
                   Официальный сайт: {website ?? 'no info'}
                 </SLink>
                 <Typography color="black" dangerouslySetInnerHTML={{ __html: description }} mb={r(4)} />
-                <SLink href="/">На главную</SLink>
               </Box>
             </Box>
           </Col>
@@ -59,7 +61,7 @@ export default function Home({ name, genres, released = 'no info', website, desc
                 lg: 'hidden',
               }}
             >
-              {screenshots?.length && <ScreenshotsSlider screenshots={screenshots} />}
+              {screenshots?.length ? <ScreenshotsSlider screenshots={screenshots} /> : <></>}
             </Box>
           </Col>
         </Row>
@@ -76,8 +78,6 @@ export async function getServerSideProps({ query: { slug } }) {
   const {
     data: { results },
   } = await Games.geGameScreens(slug)
-
-  console.log(results)
 
   return {
     props: { name, genres, website, description, released, screenshots: results },
