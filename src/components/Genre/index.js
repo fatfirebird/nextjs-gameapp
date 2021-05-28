@@ -1,1 +1,1 @@
-export * from './Genre'
+export * from './Genre.jsx'

@@ -37,7 +37,8 @@
         "quotes": ["error", "single"],
         "react/prop-types": "off",
         "react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx"] }],
-        "no-plusplus": "off"
+        "no-plusplus": "off",
+        "camelcase": "off"
     },
     "settings": {
         "react": {

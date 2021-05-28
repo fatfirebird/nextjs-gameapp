@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Box } from '../UI/Box'
 import r from '../../utils/toRem'
-import { Loader } from '../UI/Loader'
 import styled from 'styled-components'
 import { Typography } from '../UI/Typography'
 

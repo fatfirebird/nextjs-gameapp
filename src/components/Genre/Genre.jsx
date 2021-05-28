@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import r from '../../utils/toRem'
 import { Box } from '../UI/Box'
 
@@ -16,7 +17,6 @@ const SGenre = styled(Box)`
 `
 
 export const Genre = ({ name }) => {
-  console.log(name)
   return (
     <SGenre display="inline-block" mr={r(10)}>
       {name}

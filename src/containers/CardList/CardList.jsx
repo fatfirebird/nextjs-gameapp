@@ -12,7 +12,8 @@ import { SInput } from '../../components/UI/Input'
 import { SDropdown } from '../../components/UI/Drodown'
 
 export const CardList = ({ initialData, next, initialFilters }) => {
-  // лень делать редакс тулкит
+  // лень делать редакс тулкит для хелло ворлда, но с сагой там была бы сущность game и UI.
+  // UI для отслеживания состояния экшена, game для хранения детальной + главной
   const [cards, setCards] = useState(initialData)
   const [nextLink, setNext] = useState(next)
   const [filters, setFilters] = useState({ ...initialFilters })

@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import r from '../../utils/toRem'
 
 import { Box } from '../UI/Box'
-import { ScreenshotsSlide } from './Slide'
-
-const SwiperContainer = styled(Box)`
-  width: 100%;
-  /* height: 100vh; */
-`
+import { ScreenshotsSlide } from './Slide.jsx'
 
 export const ScreenshotsSlider = ({ screenshots }) => {
   const [hasLoaded, setHasLoaded] = useState(false)
