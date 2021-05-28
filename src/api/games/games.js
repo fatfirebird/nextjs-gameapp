@@ -17,4 +17,24 @@ export class Games {
       },
     })
   }
+
+  /**
+   *
+   * @param {number} id игры
+   *
+   * Получение детальной информации об игре
+   */
+  static getGameDetail(id) {
+    return Request.get(`/games/${id}`)
+  }
+
+  /**
+   *
+   * @param {number} id игры
+   *
+   * Получение детальной информации об игре
+   */
+  static geGameScreens(id) {
+    return Request.get(`/games/${id}/screenshots`)
+  }
 }

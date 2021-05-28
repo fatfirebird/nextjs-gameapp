@@ -94,9 +94,9 @@ export const CardList = ({ initialData, next, initialOrdering }) => {
         </Box>
       </Col>
 
-      {cards.map(({ id, slug, rating, name, background_image }) => (
+      {cards.map(({ id, rating, name, background_image }) => (
         <Col xs={12} md={6} lg={3} key={id}>
-          <Card slug={slug} rating={rating} name={name} imageLink={background_image} />
+          <Card slug={id} rating={rating} name={name} imageLink={background_image} />
         </Col>
       ))}
 

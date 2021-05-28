@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { typography, space, color } from 'styled-system'
 
 export const SLink = styled(Link)`
+  color: ${(props) => props.theme.colors.blue};
+
   :hover,
   :focus {
     cursor: pointer;

@@ -22,7 +22,7 @@ export const gridTheme = {
     maxWidth: {
       xxl: containerMaxWidth,
       xl: containerMaxWidth,
-      lg: containerMaxWidthTablet,
+      lg: containerMaxWidth,
       md: containerMaxWidthTablet,
       sm: 999,
       xs: 999,
