@@ -8,8 +8,9 @@ import r from '../../src/utils/toRem'
 import { Games } from '../../src/api/games'
 import { Typography } from '../../src/components/UI/Typography'
 import { Genre } from '../../src/components/Genre'
+import { ScreenshotsSlider } from '../../src/components/Slider'
 
-export default function Home({ name, genres, released = 'no info', website, description }) {
+export default function Home({ name, genres, released = 'no info', website, description, screenshots }) {
   return (
     <>
       <Head>
@@ -43,7 +44,24 @@ export default function Home({ name, genres, released = 'no info', website, desc
               </Box>
             </Box>
           </Col>
-          <Col xs={12} lg={6}></Col>
+          <Col xs={12} lg={6}>
+            <Box
+              height={{
+                lg: '100%',
+              }}
+              display={{
+                lg: 'flex',
+              }}
+              alignItems={{
+                lg: 'center',
+              }}
+              overflow={{
+                lg: 'hidden',
+              }}
+            >
+              {screenshots?.length && <ScreenshotsSlider screenshots={screenshots} />}
+            </Box>
+          </Col>
         </Row>
       </Container>
     </>
@@ -58,6 +76,8 @@ export async function getServerSideProps({ query: { slug } }) {
   const {
     data: { results },
   } = await Games.geGameScreens(slug)
+
+  console.log(results)
 
   return {
     props: { name, genres, website, description, released, screenshots: results },
