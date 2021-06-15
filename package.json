@@ -9,7 +9,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx,.ts,.tsx ./ --fix"
+    "lint": "./node_modules/.bin/eslint --ext .js,.jsx,.ts,.tsx ./ --fix",
+    "test": "jest"
   },
   "husky": {
     "hooks": {
@@ -30,6 +31,7 @@
     "swiper": "^6.6.2"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.14.5",
     "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
@@ -39,6 +41,7 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.23.2",
     "husky": "^6.0.0",
+    "jest": "^27.0.4",
     "prettier": "^2.3.0"
   }
 }
